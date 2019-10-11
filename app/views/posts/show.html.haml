@@ -1,0 +1,15 @@
+.container.mini-frame
+  %p
+    %h3= @post.title
+  %p
+    = @post.content
+  %p
+    - if current_user.admin
+      %b Status : #{@post.current_status}
+      .col-md-12
+        .col-md-6
+          = link_to "Accept", accept_post_path(@post), method: :put, class: 'btn btn-success' unless @post.accepted
+        .col-md-6
+          = link_to "Reject", reject_post_path(@post), method: :put, class: 'btn btn-danger' unless @post.rejected
+  %p
+    .btn= link_to 'Back', posts_path

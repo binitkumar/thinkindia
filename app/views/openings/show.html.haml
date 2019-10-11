@@ -1,0 +1,16 @@
+.container.mini-frame
+  %h3.text-center Opening details
+  %p
+    %b Title:
+    = @opening.job_title
+  %p
+    %b Description:
+    = @opening.job_description.html_safe
+  %p
+    %b Last date:
+    = @opening.last_date
+  %p
+    %b Status:
+    = @opening.job_status
+  %p= link_to "Apply now", new_opening_application_form_path(@opening), class: 'btn btn-success'
+  = link_to 'Back', openings_path

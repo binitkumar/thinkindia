@@ -1,0 +1,142 @@
+%section#featured
+  / start slider
+  / Slider
+  #nivo-slider
+    .nivo-slider
+      / Slide #1 image
+      %img{:alt => "", :src => "/assets/slides/nivo/bg-1.jpg", :title => "#caption-1"}/
+      / Slide #2 image
+      %img{:alt => "", :src => "/assets/slides/nivo/bg-2.jpg", :title => "#caption-2"}/
+      / Slide #3 image
+      %img{:alt => "", :src => "/assets/slides/nivo/bg-3.jpg", :title => "#caption-3"}/
+    .container
+      .row
+        .col-md-12
+          / Slide #1 caption
+          #caption-1.nivo-caption
+            %div
+              %h2
+                Netaji
+                %strong Subhash Chandra Bose
+              %p
+                तुम मुझे खून दो, मैं तुम्हें आज़ादी दूंगा
+              %a.btn.btn-theme{:href => "#"} Read More
+          / Slide #2 caption
+          #caption-2.nivo-caption
+            %div
+              %h2
+                Bal
+                %strong Gangadhar Tilak
+              %p
+                Swaraj is my birthright, and I shall have it!
+              %a.btn.btn-theme{:href => "#"} Read More
+          / Slide #3 caption
+          #caption-3.nivo-caption
+            %div
+              %h2
+                Shri
+                %strong Aurobindo
+              %p
+                By our stumbling the world is perfected.
+              %a.btn.btn-theme{:href => "#"} Read More
+  / end slider
+%section.callaction#services
+  .container
+    .row
+      .col-md-12
+        .big-cta
+          .cta-text
+            %h3
+              We are Think India and
+              %col-md-.highlight
+                %strong We think for INDIA!
+%section#content
+  .container
+    .row
+      .col-md-12
+        .row
+          .col-md-3
+            .box.aligncenter
+              .aligncenter.icon
+                %i.icon-briefcase.icon-circled.icon-64.active
+              .text
+                %h6 Events
+                %p
+                  We organise seminar, workshops, compititions, NIT Talks and events to bring awareness about socioeconomic issues. 
+                /%a{:href => "#"} Learn more
+          .col-md-3
+            .box.aligncenter
+              .aligncenter.icon
+                %i.icon-desktop.icon-circled.icon-64.active
+              .text
+                %h6 Internships
+                %p
+                  Provide internships in various policy making and research institutions, NGO's, Media houses and successful startups.
+                /%a{:href => "#"} Learn more
+          .col-md-3
+            .box.aligncenter
+              .aligncenter.icon
+                %i.icon-beaker.icon-circled.icon-64.active
+              .text
+                %h6 Training
+                %p
+                  With our in-house and external expertise we provide training to students to bring quality in their fields.
+                /%a{:href => "#"} Learn more
+          .col-md-3
+            .box.aligncenter
+              .aligncenter.icon
+                %i.icon-coffee.icon-circled.icon-64.active
+              .text
+                %h6 Publications
+                %p
+                  Help students to publish their research articles.
+                /%a{:href => "#"} Learn more
+    / divider
+    .row
+      .col-md-12
+        .solidline
+    / end divider
+    / Portfolio Projects
+    .row
+      .col-md-12
+        %h4.heading
+          Some of recent
+          %strong works
+        .row
+          %section#projects
+            %ul#thumbs.portfolio
+              / Item Project and Filter Name
+              %li.item-thumbs.col-md-3.design{"data-id" => "id-0", "data-type" => "web"}
+                %a.hover-wrap.fancybox{"data-fancybox-group" => "gallery", :href => "/assets/works/youth-society-and-ehtrepreneurship-thumb.JPG", :title => "Talk on Youth Society and Entrepreneurship"}
+                  %col-md-.overlay-img
+                  %col-md-.overlay-img-thumb.font-icon-plus
+                / Thumb Image and Description
+                %img{:alt => "6th September 2019: Prof. Mahadeo Jaiswal (Director, IIM Sambalpur) delivered speech on role of youth in serving society through Entrepreneurship.", :src => "/assets/works/youth-society-and-ehtrepreneurship-thumb.JPG"}/
+              / End Item Project
+              / Item Project and Filter Name
+              %li.item-thumbs.col-md-3.design{"data-id" => "id-1", "data-type" => "icon"}
+                / Fancybox - Gallery Enabled - Title - Full Image
+                %a.hover-wrap.fancybox{"data-fancybox-group" => "gallery", :href => "/assets/works/Inductions-thumb.jpg", :title => "Induction 2019"}
+                  %col-md-.overlay-img
+                  %col-md-.overlay-img-thumb.font-icon-plus
+                / Thumb Image and Description
+                %img{:alt => "12th September 2019: It was our first induction.", :src => "/assets/works/Inductions-thumb.jpg"}/
+              / End Item Project
+              / Item Project and Filter Name
+              %li.item-thumbs.col-md-3.design{"data-id" => "id-1", "data-type" => "icon"}
+                / Fancybox - Gallery Enabled - Title - Full Image
+                %a.hover-wrap.fancybox{"data-fancybox-group" => "gallery", :href => "/assets/works/dharmendra-pradhan.JPG", :title => "Meeting with Dharmendra Pradhan"}
+                  %col-md-.overlay-img
+                  %col-md-.overlay-img-thumb.font-icon-plus
+                / Thumb Image and Description
+                %img{:alt => "29th September 2019: Think India meet with Union Cabinet Minister Dharmendra Pradhan and greeted him in NIT Rourkela.", :src => "/assets/works/dharmendra-pradhan.JPG"}/
+              / End Item Project
+              / Item Project and Filter Name
+    / End Portfolio Projects
+%section#bottom
+  .container
+    .row
+      .col-md-12
+        .aligncenter
+          #twitter-wrapper
+            #twitter

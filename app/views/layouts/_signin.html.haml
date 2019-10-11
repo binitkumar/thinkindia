@@ -1,0 +1,24 @@
+
+#mySignin.modal.styled.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "mySigninModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h4#mySigninModalLabel
+      Login to your
+      %strong account
+  .modal-body
+    %form.form-horizontal
+      .control-group
+        %label.control-label{:for => "inputText"} Username
+        .controls
+          %input#inputText{:placeholder => "Username", :type => "text"}/
+      .control-group
+        %label.control-label{:for => "inputSigninPassword"} Password
+        .controls
+          %input#inputSigninPassword{:placeholder => "Password", :type => "password"}/
+      .control-group
+        .controls
+          %button.btn{:type => "submit"} Sign in
+        %p.aligncenter.margintop20
+          Forgot password?
+          %a{"aria-hidden" => "true", "data-dismiss" => "modal", "data-toggle" => "modal", :href => "#myReset"} Reset
+/ end signin modal

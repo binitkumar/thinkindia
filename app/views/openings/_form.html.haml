@@ -1,0 +1,13 @@
+-# frozen_string_literal: true
+= simple_form_for(@opening) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :job_title
+    = f.input :job_description, as: :ckeditor
+    = f.input :last_date
+    = f.input :is_open
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-primary'

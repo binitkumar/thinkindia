@@ -1,0 +1,27 @@
+.container.mini-frame
+  .pull-right= link_to 'Add New Post', new_post_path, class: 'btn btn-primary'
+  %h1 Blogs
+  
+  - if current_user.admin
+    %h3 Under moderation
+    - @unpublished_posts.each do |post|
+      %p
+        %h3= link_to post.title, post
+        = post.content
+        %br/
+        Posted by #{post.user.thredded_user_name}
+    %b= "No blog in moderation right now." if @unpublished_posts.empty?
+    .solidline
+  - @posts.each do |post|
+    %p
+      .pull-right Published on: #{post.created_at.strftime("%d/%m/%Y")}
+      %h3= link_to post.title, post
+      = strip_tags(post.content)[0..100]
+      - if strip_tags(post.content).length > 100
+        %small= link_to "more..", post
+      %br/
+      Posted by: #{post.user.thredded_user_name}
+    %p
+      .solidline
+  %b= "No blog published yet." if @posts.empty?
+

@@ -1,0 +1,15 @@
+.container
+  %h3 User management console 
+
+  %table.table
+    %thead
+      %tr
+        %td Email
+        %td Activation
+        %td Admin
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.email
+          %td= link_to user.activation_status, activation_admin_user_path(user), title: 'Click to toggle status', method: :put
+          %td= link_to user.is_admin ? "True" : "False" , update_is_admin_admin_user_path(user), title: 'Click to toggle status', method: :put 

@@ -1,0 +1,16 @@
+.container.mini-frame
+  %h4.text-center Think India press releases
+  - if current_user && current_user.admin
+    .pull-right= link_to 'New Press release', new_press_release_path, class: 'btn btn-primary'
+  - @press_releases.each do |press_release|
+    %p
+      .pull-right 
+        %b Published on #{press_release.published_on.strftime("%d/%m/%Y")}
+      %b
+        =link_to press_release.title, press_release
+      %br/
+      = "#{strip_tags(press_release.article)[0..50]}.."
+      - if current_user && current_user.admin
+        .pull-right= link_to 'Edit', edit_press_release_path(press_release), class: 'btn btn-primary'
+        .pull-right= link_to 'Destroy', press_release, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary'
+    .solidline

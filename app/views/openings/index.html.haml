@@ -1,0 +1,19 @@
+.container.mini-frame
+  %h3.text-center Current openings
+
+  .pull-right= link_to 'New Opening', new_opening_path, class: 'btn btn-primary' if current_user && current_user.admin
+  - @openings.each do |opening|
+    %p
+      .pull-right
+        %b= "Last date: #{opening.last_date.strftime('%d/%m/%Y')}"
+      %b=link_to opening.job_title, opening
+      %br/
+      = opening.job_description.html_safe
+      %br/
+      %b Status:
+      = opening.job_status
+      - if current_user && current_user.admin
+        .pull-right= link_to 'Edit', edit_opening_path(opening), class: 'btn btn-primary'
+        .pull-right= link_to 'Destroy', opening, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary'
+  .solidline
+

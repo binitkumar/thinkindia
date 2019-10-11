@@ -1,0 +1,63 @@
+%footer
+  .container
+    .row
+      .col-md-3
+        .widget
+          %h5.widgetheading Browse pages
+          %ul.link-list
+            %li= link_to "About", about_path
+            %li= link_to "Our Services", "/#services"
+            %li
+              %a{:href => about_path} Team
+            %li
+              %a{:href => new_contact_path} Get in touch with us
+      .col-md-3
+        .widget
+          %h5.widgetheading Important stuff
+          %ul.link-list
+            %li
+              %a{:href => press_releases_path } Press release
+            %li
+              %a{:href => terms_and_conditions_path} Terms and conditions
+            %li
+              %a{:href => privacy_policy_path} Privacy policy
+            %li
+              %a{:href => openings_path} Openings 
+      .col-md-3
+        .widget
+          %h5.widgetheading Get in touch with us
+          %address
+            %strong Think India NIT Rourkela 
+            %br/
+            Student Activity Center, NIT Rourkela
+            %br/
+            Pin: 769008
+          %p
+            %i.icon-phone
+            +91-944-129-6505
+            %br/
+            %i.icon-envelope-alt
+            thinkindianitr@gmail.com
+  #sub-footer
+    .container
+      .row
+        .col-md-6
+          .copyright
+            %p
+              %span © Think India - All right reserved.
+        .col-md-6
+          %ul.social-network
+            %li
+              %a{"data-placement" => "bottom", :href => "https://www.facebook.com/thinkindianitr", :title => "Facebook"}
+                %i.icon-facebook.icon-square
+            %li
+              %a{"data-placement" => "bottom", :href => "https://twitter.com/thinkindianitr", :title => "Twitter"}
+                %i.icon-twitter.icon-square
+%a.scrollup{:href => "#"}
+  %i.icon-chevron-up.icon-square.icon-32.active
+/
+  javascript
+  \==================================================
+/ Placed at the end of the document so the pages load faster
+= javascript_include_tag :application
+= javascript_include_tag Ckeditor.cdn_url

@@ -1,0 +1,28 @@
+.container
+  %h1 Application forms
+
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th Name
+        %th Contact no
+        %th Email
+        %th Message
+        %th Are you nit rourkela student
+        %th
+        %th
+    
+    %tbody
+      - @application_forms.each do |application_form|
+        %tr
+          %td= link_to application_form.name, [application_form.opening, application_form]
+          %td= application_form.contact_no
+          %td= application_form.email
+          %td= application_form.message.html_safe
+          %td= application_form.are_you_nit_rourkela_student
+          %td= link_to 'Edit', edit_application_form_path(application_form)
+          %td= link_to 'Destroy', application_form, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Application form', new_application_form_path

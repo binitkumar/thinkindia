@@ -1,0 +1,10 @@
+.container.mini-frame
+  %h3.text-center Press Release
+  .pull-right
+    %b= "Published on: #{@press_release.published_on.strftime("%d/%m/%Y")}"
+  %p
+    %h5= @press_release.title
+  %p
+    = @press_release.article.html_safe
+  %p
+    .pull-right= link_to 'Back', press_releases_path, class: 'btn btn-primary'

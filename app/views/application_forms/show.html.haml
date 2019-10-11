@@ -1,0 +1,17 @@
+.container.mini-frame
+  %h3.text-center Application for #{@opening.job_title}
+  %p
+    %b Name:
+    = @application_form.name
+  %p
+    %b Contact no:
+    = @application_form.contact_no
+  %p
+    %b Email:
+    = @application_form.email
+  %p
+    %b Message:
+    = @application_form.message.html_safe
+  %p
+    %b Are you nit rourkela student:
+    = @application_form.are_you_nit_rourkela_student

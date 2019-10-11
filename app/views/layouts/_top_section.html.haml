@@ -1,0 +1,31 @@
+%header
+  .container
+    .row.nomargin
+      .col-md-12
+        .headnav
+          %ul
+            - unless current_user
+              %li
+                %a{href: new_registration_path(:user)}
+                  %i.icon-user
+                  Register 
+              %li
+                %a{href: new_session_path(:user)} Sign in
+            - else
+              %li= link_to "Profile", edit_registration_path(:user)
+              %li= link_to "Sign out", destroy_session_path(:user), method: :delete
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggler{"type"=>"button", "class"=>"navbar-toggle collapsed", "data-toggle"=>"collapse", "data-target"=>".navbar-collapse", "aria-controls"=>"navbarSupportedContent", "aria-expanded"=>false}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          .logo-container
+            %a.text-center{:href => root_path}
+              %img.logo{:alt => "", :src => "/assets/logo.png"}/
+              .logo-text
+                %small A cultural club registered with SAC, NIT Rourkela
+        #navbarSupportedContent.collapse.navbar-collapse
+          = render "layouts/top_navigation"

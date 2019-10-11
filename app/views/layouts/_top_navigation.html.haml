@@ -1,0 +1,21 @@
+%ul.nav.navbar-nav.navbar-right
+  %li
+    %a{:href => root_path} Home
+  %li
+    %a{:href => "/forum"} Forum
+  %li
+    %a{:href => "/blogs"} Blog
+  %li
+    %a{:href => about_path} About Us
+  %li
+    %a{:href => new_contact_path} Contact
+  - if current_user && current_user.admin
+    %li.dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", "href" => "#"} 
+        Admin
+        %span.caret
+      %ul.dropdown-menu
+        %li= link_to "Users", admin_users_path
+        %li= link_to "Applications", application_forms_path
+        %li= link_to "Contacts", contacts_path
+  

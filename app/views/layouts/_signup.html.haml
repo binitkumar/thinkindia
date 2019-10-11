@@ -1,0 +1,30 @@
+#mySignup.modal.styled.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "mySignupModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h4#mySignupModalLabel
+      Create an
+      %strong account
+  .modal-body
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'form-horizontal') do |f|
+      .control-group
+        %label.control-label{:for => "inputEmail"} Email
+        .controls
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', id: 'inputEmail'
+      .control-group
+        %label.control-label{:for => "inputSignupPassword"} Password
+        .controls
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "new-password", placeholder: 'Password', id: 'inputSignupPassword'
+      .control-group
+        %label.control-label{:for => "inputSignupPassword2"} Confirm Password
+        .controls
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Password', id: 'inputSignupPassword2'
+      .control-group
+        .controls
+          %button.btn{:type => "submit"} Sign up
+        %p.aligncenter.margintop20
+          Already have an account?
+          %a{"aria-hidden" => "true", "data-dismiss" => "modal", "data-toggle" => "modal", :href => "#mySignin"} Sign in

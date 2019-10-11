@@ -1,0 +1,16 @@
+%html{:lang => "en"}
+  %head
+    = render "layouts/header"
+  %body
+    #wrapper
+      = render "layouts/hidden_contact_us"
+      / start header
+      = render "layouts/top_section"
+      / end header
+      .flash-message
+        - flash.each do |key, value|
+          .text-center
+            .col-md-12{ class: "message #{ key }-primary #{key}" } 
+              = value 
+      = yield
+      = render "layouts/footer"
