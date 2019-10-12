@@ -72,3 +72,4 @@ gem 'paperclip'
 gem 'friendly_id'
 gem "recaptcha"
 gem 'rails_serve_static_assets'
+gem 'rails_12factor', group: :production
