@@ -14,6 +14,11 @@
  *= require fancybox/jquery.fancybox
  *= require jcarousel
  *= require flexslider
+ *= require google-code-prettify/prettify
+ *= require font-awesome
+ *= require custom-fonts
+ *= require overwrite
+ *= require animate
  *= require style
  *= require default
  */

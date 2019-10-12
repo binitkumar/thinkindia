@@ -5,19 +5,6 @@
   Author URL: https://bootstrapmade.com
 */
 
-/* === prettify === */
-
-@import url('/assets/google-code-prettify/prettify.css');
-/* === fontawesome === */
-
-@import url('font-awesome.css');
-/* === custom icon === */
-
-@import url('custom-fonts.css');
-/* ==== overwrite bootstrap standard ==== */
-
-@import url('overwrite.css');
-@import url('animate.css');
 /* Table of content */
 
 /*===================================
