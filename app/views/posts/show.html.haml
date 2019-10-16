@@ -2,7 +2,7 @@
   %p
     %h3= @post.title
   %p
-    = @post.content
+    = @post.content.html_safe
   %p
     - if current_user.admin
       %b Status : #{@post.current_status}

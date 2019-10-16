@@ -6,6 +6,25 @@ Rails.application.routes.draw do
   resources :application_forms
   resources :press_releases
   mount Ckeditor::Engine => '/ckeditor'
+
+  namespace :api do
+    resources :users do
+      collection do
+        post "login"
+        post "register"
+        post "update"
+      end
+    end
+    resources :contacts do
+      collection do
+        post "update"
+      end
+    end
+    resources :press_releases
+    resources :blogs
+    resources :user_updates
+  end
+
   namespace :admin do
     resources :users do
       member do

@@ -7,7 +7,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def activation
-    user = User.find(params[:id])
+    user = User.friendly.find(params[:id])
     unless user == current_user
       user.update_attribute(:is_active, !user.is_active)
     else
@@ -18,7 +18,7 @@ class Admin::UsersController < ApplicationController
 
   
   def update_is_admin 
-    user = User.find(params[:id])
+    user = User.friendly.find(params[:id])
     unless user == current_user
       user.update_attribute(:is_admin, !user.is_admin)
     else

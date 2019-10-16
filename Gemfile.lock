@@ -196,6 +196,7 @@ GEM
     pundit (2.1.0)
       activesupport (>= 3.0.0)
     rack (2.0.7)
+    rack-cors (1.0.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.3)
@@ -232,6 +233,7 @@ GEM
     rb-gravatar (1.0.5)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    rb-readline (0.5.5)
     recaptcha (5.2.1)
       json
     regexp_parser (1.6.0)
@@ -356,9 +358,11 @@ DEPENDENCIES
   paperclip
   pg
   puma (~> 3.11)
+  rack-cors
   rails (~> 5.2.3)
   rails_12factor
   rails_serve_static_assets
+  rb-readline
   recaptcha
   sass-rails (~> 5.0)
   selenium-webdriver

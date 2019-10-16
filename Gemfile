@@ -73,3 +73,5 @@ gem 'friendly_id'
 gem "recaptcha"
 gem 'rails_serve_static_assets'
 gem 'rails_12factor', group: :production
+gem 'rack-cors', :require => 'rack/cors'
+gem 'rb-readline'

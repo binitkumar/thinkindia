@@ -1,13 +1,13 @@
 .container.mini-frame
   .pull-right= link_to 'Add New Post', new_post_path, class: 'btn btn-primary'
-  %h1 Blogs
+  %h1.text-center Think India NITR Blogs
   
   - if current_user.admin
     %h3 Under moderation
     - @unpublished_posts.each do |post|
       %p
         %h3= link_to post.title, post
-        = post.content
+        = strip_tags(post.content)[0..100]
         %br/
         Posted by #{post.user.thredded_user_name}
     %b= "No blog in moderation right now." if @unpublished_posts.empty?

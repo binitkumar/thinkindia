@@ -8,6 +8,10 @@
         %br/
         = f.text_field :name, class: 'form-control'
       .field
+        = f.label :about_me
+        %br/
+        = f.text_area :about_me, class: 'form-control'
+      .field
         = f.label :email
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
@@ -22,9 +26,14 @@
         = f.label :password_confirmation
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
+      %br/
       .field
         = f.check_box :terms
         I accept terms and conditions given at #{link_to('Terms and conditions', terms_and_conditions_path)}
+      %br/
+      .field
+        = f.check_box :allow_promotional_messages
+        Send me updates and newsletter.
       .field
         = recaptcha_tags
       .actions
