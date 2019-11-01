@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/tsechingho/ckeditor-rails.git
+  revision: 16b77cca464ecf78a3318df64bb23f95b297adb2
+  specs:
+    ckeditor_rails (4.10.0)
+      railties (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -107,8 +114,6 @@ GEM
       nokogiri (~> 1.8)
     ckeditor (5.0.0)
       orm_adapter (~> 0.5.0)
-    ckeditor_rails (4.10.0)
-      railties (>= 3.0)
     climate_control (0.2.0)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -412,7 +417,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   ckeditor
-  ckeditor_rails
+  ckeditor_rails!
   coffee-rails (~> 4.2)
   devise
   friendly_id
