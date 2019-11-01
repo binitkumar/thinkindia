@@ -72,7 +72,6 @@ gem 'thredded', '~> 0.16.13'
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'ckeditor'
-gem 'ckeditor_rails', github: 'tsechingho/ckeditor-rails'
 gem 'paperclip'
 gem 'friendly_id'
 gem "recaptcha"

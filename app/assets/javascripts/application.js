@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require ckeditor-jquery
 //= require social-share-button
 //= require activestorage
 //= require bootstrap
