@@ -12,6 +12,7 @@ module Thinkindia
     config.load_defaults 5.2
 
     config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
+    config.assets.precompile += Ckeditor.assets
 
     config.serve_static_assets = true
     # Settings in config/environments/* take precedence over those specified here.
