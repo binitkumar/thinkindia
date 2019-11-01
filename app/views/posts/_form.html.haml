@@ -7,6 +7,6 @@
           %li= message
 
   = f.input :title
-  = f.input :content, input_html: {class: 'ckeditor'}
+  = f.input :content, as: 'ckeditor'
   .actions
     = f.submit 'Save', class: 'btn btn-primary'

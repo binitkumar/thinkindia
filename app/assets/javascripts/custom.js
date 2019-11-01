@@ -2,10 +2,6 @@
 jQuery(document).ready(function($) {
   "use strict";
 
-  $('.ckeditor').ckeditor({
-    // optional config
-  });
-
   (function() {
     setTimeout(function(){ $(".flash-message").hide(); }, 5000)
     var $menu = $('.navigation nav'),
