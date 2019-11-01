@@ -48,6 +48,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.4", require: false
 end
 
 group :test do
@@ -68,6 +71,7 @@ gem 'thredded', '~> 0.16.13'
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'ckeditor'
+gem 'ckeditor_rails'
 gem 'paperclip'
 gem 'friendly_id'
 gem "recaptcha"
@@ -75,3 +79,6 @@ gem 'rails_serve_static_assets'
 gem 'rails_12factor', group: :production
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rb-readline'
+gem 'social-share-button'
+gem 'aws-sdk-s3'
+gem 'mailjet'

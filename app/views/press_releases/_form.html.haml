@@ -5,7 +5,7 @@
 
   .form-inputs
     = f.input :title
-    = f.input :article, as: :ckeditor
+    = f.input :article, input_html: {class: 'ckeditor'}
     = f.input :published_on
 
   .form-actions

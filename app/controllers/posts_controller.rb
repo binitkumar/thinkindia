@@ -1,17 +1,18 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :accept, :reject]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /posts
   # GET /posts.json
   def index
-    @unpublished_posts = Post.where(accepted: false).where(rejected: false) if current_user.admin
+    @unpublished_posts = Post.where(accepted: false).where(rejected: false) if current_user && current_user.admin
     @posts = Post.where(accepted: true)
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comment = Comment.new(post_id: @post.id)
   end
 
   # GET /posts/new

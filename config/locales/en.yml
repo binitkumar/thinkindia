@@ -30,4 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  thredded:
+    messageboard_first_topic:
+      content: |-
+        Just put your random thoughts here for whom you don't find a topic listed in messageboard.
+      title: Random thoughts (Not included in existing topics)

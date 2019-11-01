@@ -11,6 +11,7 @@ class User < ApplicationRecord
   attr_accessor :terms
 
   has_many :posts
+  has_many :comments
 
   def activation_status
     if self.is_active

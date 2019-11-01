@@ -1,0 +1,4 @@
+= simple_form_for @comment do |f|
+  = f.input :post_id, as: :hidden, value: @post.id
+  = f.input :content, input_html: {class: 'ckeditor'}, label: 'Comment'
+  = f.submit "Send", class: 'btn btn-success'

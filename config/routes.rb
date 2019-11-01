@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   resources :openings do
     resources :application_forms
   end
   resources :application_forms
+  resources :news_and_events, controller: :press_releases
   resources :press_releases
-  mount Ckeditor::Engine => '/ckeditor'
 
   namespace :api do
     resources :users do
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
   end
 
   resources :contacts
+  resources :comments
   resources :posts do
     member do
       put :accept
@@ -46,10 +48,14 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "registrations" }
   get 'home/index'
+  get 'home/subhas'
+  get 'home/patel'
+  get 'home/aurobindo'
   get 'privacy_policy', to: "home#privacy_policy", as: :privacy_policy
   get 'terms_and_conditions', to: "home#terms_and_conditions", as: :terms_and_conditions
   get 'about', to: "home#about", as: :about
 
+  get "users/:id", to: "home#user_details"
   root to: "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,15 +1,31 @@
 .container.mini-frame
   %p
+  .pull-right= social_share_button_tag(@post.title)
+  %p
     %h3= @post.title
   %p
     = @post.content.html_safe
+    %hr/
   %p
-    - if current_user.admin
+    - if current_user && current_user.admin
       %b Status : #{@post.current_status}
       .col-md-12
         .col-md-6
           = link_to "Accept", accept_post_path(@post), method: :put, class: 'btn btn-success' unless @post.accepted
         .col-md-6
           = link_to "Reject", reject_post_path(@post), method: :put, class: 'btn btn-danger' unless @post.rejected
+  %p
+    %h5 Comments:
+    = render "comments/form"
+    - unless @post.comments.any?
+      .text-center No comments added yet.
+    - else
+      - @post.comments.each do |comment|
+        .col-md-12
+          .col-md-2= link_to comment.user.name, "/users/#{comment.user.slug}"
+          .col-md-10
+            = comment.content.html_safe
+        .col-md-12
+          %hr/
   %p
     .btn= link_to 'Back', posts_path

@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   friendly_id :title, use: :slugged
 
   belongs_to :user
+  has_many :comments
 
   def current_status
     if self.accepted

@@ -1,0 +1,18 @@
+%section#content
+  .container
+    .row
+      .col-md-4
+        %b Name:
+        = @user.name
+        %br/
+        %b About me:
+        = @user.about_me
+        %br/
+      .col-md-8
+        %h3 Blogs by #{@user.name}
+        - if @user.posts.any?
+          -@user.posts.each do  |post|
+            = link_to post.title, post
+            %hr/
+        - else
+          No blog posted by #{@user.name} yet.
