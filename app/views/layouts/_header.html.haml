@@ -1,6 +1,6 @@
 %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
 %meta{:charset => "utf-8"}/
-%title Think India - A Cultural Club registered under SAC, NIT Rourkela
+%title Think India - A Cultural Club at NIT Rourkela
 %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
 %meta{:content => "", :name => "description"}/
 %meta{:content => "", :name => "author"}/
@@ -11,6 +11,8 @@
 
 %link{:href => "https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700", :rel => "stylesheet"}/
 = stylesheet_link_tag :application
+= javascript_include_tag Ckeditor.cdn_url
+= javascript_include_tag :application
 
 / Fav and touch icons
 %link{:href => asset_path("ico/favicon.png"), :rel => "shortcut icon"}/

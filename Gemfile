@@ -71,7 +71,7 @@ gem "devise"
 gem 'thredded', '~> 0.16.13'
 gem 'simple_form'
 gem 'jquery-rails'
-gem 'ckeditor'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'paperclip'
 gem 'friendly_id'
 gem "recaptcha"
