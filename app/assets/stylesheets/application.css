@@ -20,6 +20,8 @@
  *= require custom-fonts
  *= require overwrite
  *= require animate
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
  *= require style
  *= require default
  */

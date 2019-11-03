@@ -1,17 +1,22 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
 
   extend FriendlyId
   friendly_id :name, use: :slugged
+
+  has_attached_file :profile_pic, styles: { medium: "300x300>", thumb: "100x100>" }
+  validates_attachment_content_type :profile_pic, :content_type => /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)$/
 
   validates_acceptance_of :terms
   attr_accessor :terms
 
   has_many :posts
   has_many :comments
+  has_many :gallery_pics
+  has_many :gallery_pic_comments
 
   def activation_status
     if self.is_active

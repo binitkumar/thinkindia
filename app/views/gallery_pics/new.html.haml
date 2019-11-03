@@ -1,0 +1,6 @@
+.container.mini-frame
+  %h5 Share your pics with your friends 
+
+  = render 'form'
+
+  = link_to '<< Back to gallery', gallery_pics_path(collection: session[:collection])

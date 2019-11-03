@@ -1,0 +1,26 @@
+.container.mini-frame
+  %br/
+  %h3.text-center Think India Gallery
+
+  .pull-right= link_to 'Share your pics', new_gallery_pic_path(collection: params[:collection]), class: 'btn btn-primary'
+  %ul.nav.nav-tabs
+    %li.active
+      %a{href: "#public_pics", "data-toggle"=>"tab"} Public pics
+    %li
+      %a{href: "#personal_pics", "data-toggle"=>"tab"} My pics
+  .tab-content
+    #public_pics.tab-pane.fade.in.active
+      - @gallery_pics.each do |pic|
+        .gallery-pic=link_to image_tag(pic.photo.url(:medium), width: '200', height: '200'), pic
+      = will_paginate @gallery_pics
+      = "No pics added here yet." if @gallery_pics.empty?
+
+    #personal_pics.tab-pane.fade.in
+      - if current_user
+        .col-md-12
+          - @user_gallery_pics.each do |pic|
+            .gallery-pic=link_to image_tag(pic.photo.url(:medium), width: '200', height: '200'), pic
+        = will_paginate @user_gallery_pics, param_name: 'my_pics_page', params: {active_tab: 'personal_pics'}
+        = "No pics added here yet." if @user_gallery_pics.empty?
+      - else
+        = "Login to view your pics"

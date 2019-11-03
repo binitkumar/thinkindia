@@ -1,0 +1,2 @@
+module GalleryPicCommentsHelper
+end

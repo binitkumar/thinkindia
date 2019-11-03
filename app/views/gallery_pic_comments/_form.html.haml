@@ -1,0 +1,4 @@
+= simple_form_for @gallery_pic_comment do |f|
+  = f.input :content, label: 'Comment'
+  = f.input :gallery_pic_id, as: :hidden, input_html: {value: @gallery_pic.id}
+  = f.submit "Add", class: 'btn btn-primary'

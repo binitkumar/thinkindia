@@ -1,0 +1,35 @@
+.container.mini-frame
+  .col-md-12
+    .col-md-4
+      %table.table
+        %tr
+          %td.text-center{colspan: 4} 
+            %b Unpublished Pics
+        - @unpublished_pics.each do |pic|
+          %tr
+            %td=link_to image_tag(pic.photo.url(:thumb)), pic
+            %td= link_to "Mark private", mark_private_admin_gallery_pic_path(pic), method: :put
+            %td= link_to "Publish to public", publish_admin_gallery_pic_path(pic), method: :put
+            %td=link_to "Delete", pic, method: :delete
+    .col-md-4
+      %table.table
+        %tr
+          %td.text-center{colspan: 4} 
+            %b Published Pics
+        - @published_pics.each do |pic|
+          %tr
+            %td=link_to image_tag(pic.photo.url(:thumb)), pic
+            %td= link_to "Mark private", mark_private_admin_gallery_pic_path(pic), method: :put
+            %td= link_to "Unpublish from public", unpublish_admin_gallery_pic_path(pic), method: :put
+            %td=link_to "Delete", pic, method: :delete
+    .col-md-4
+      %table.table
+        %tr
+          %td.text-center{colspan: 3} 
+            %b Private Pics
+        - @private_pics.each do |pic|
+          %tr
+            %td=link_to image_tag(pic.photo.url(:thumb)), pic
+            %td= link_to "Remove private", remove_private_admin_gallery_pic_path(pic), method: :put
+            %td=link_to "Delete", pic, method: :delete
+      

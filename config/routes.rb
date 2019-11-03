@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :gallery_pic_comments, only: [:create, :destroy]
+  resources :gallery_pics do
+    member do
+      post :add_tag
+      delete :remove_tag
+    end
+  end
   mount Ckeditor::Engine => '/ckeditor'
   resources :openings do
     resources :application_forms
@@ -27,6 +34,15 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :gallery_pics, only: [:index] do
+      member do
+        put :mark_private
+        put :publish
+        put :unpublish
+        put :remove_private
+      end
+    end
+
     resources :users do
       member do
         put "activation"

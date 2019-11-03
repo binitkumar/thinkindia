@@ -1,0 +1,6 @@
+= form_tag add_tag_gallery_pic_url(@gallery_pic) do |f|
+  %b Add Tag:
+  %br/
+  = text_field_tag :tag, nil, class: 'form-control'
+  %br/
+  = submit_tag "Add", class: 'btn btn-primary'

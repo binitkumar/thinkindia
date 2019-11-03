@@ -4,6 +4,7 @@ jQuery(document).ready(function($) {
 
   (function() {
     setTimeout(function(){ $(".flash-message").hide(); }, 5000)
+
     var $menu = $('.navigation nav'),
       optionsList = '<option value="" selected>Go to..</option>';
 

@@ -1,0 +1,33 @@
+.container.mini-frame
+  %br/
+  .col-md-12
+    .col-md-8
+      %p
+        .pull-right= social_share_button_tag("#{@gallery_pic.user.name} shared a photo")
+      = image_tag(@gallery_pic.photo.url, width: '100%')
+      %p
+        = link_to "Back to gallery", gallery_pics_path(collection: session[:collection])
+    .col-md-4
+      %b Tags:
+      %br/
+      - @gallery_pic.tags.each do |tag|
+        .tag-block
+          = tag
+          = link_to "X", remove_tag_gallery_pic_path(@gallery_pic, tag: tag.to_s), method: :delete
+      %br/
+      %br/
+      - if (current_user == @gallery_pic.user) || current_user.admin
+        %hr/
+        = render "tag_form"
+      %h5 Comments:
+      - if current_user
+        = render "gallery_pic_comments/form"
+      - if @gallery_pic.gallery_pic_comments.any?
+        - @gallery_pic.gallery_pic_comments.each do |comment|
+          .col-md-12.comment-block
+            .col-md-4
+              = image_tag(comment.user.profile_pic.url(:thumb), width: 50, height: 50)
+              = link_to comment.user.name, "/users/#{comment.user.slug}"
+            .col-md-8= comment.content
+      - else
+        %h5 No comments added yet.

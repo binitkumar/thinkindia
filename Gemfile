@@ -82,3 +82,7 @@ gem 'rb-readline'
 gem 'social-share-button'
 gem 'aws-sdk-s3'
 gem 'mailjet'
+
+gem "jquery-fileupload-rails"
+gem 'acts-as-taggable-on', '~> 6.0'
+gem 'will_paginate', '~> 3.1.0'

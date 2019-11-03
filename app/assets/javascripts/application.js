@@ -26,5 +26,7 @@
 //= require modernizr.custom
 //= require jquery.ba-cond.min
 //= require jquery.slitslider
+//= require jquery-fileupload
+//= require masonary
 //= require animate
 //= require custom

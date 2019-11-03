@@ -2753,4 +2753,25 @@ img.forum-logo {
   width: min-content;
   height: min-content;
 }
+.tag-block {
+    width: fit-content;
+    border: 1px solid #f6831a;
+    padding: 3px;
+    border-radius: 5px;
+    margin: 2px;
+    float: left;
+}
+.comment-block {
+    border: 1px solid #f6831a;
+    margin: 1px;
+    border-radius: 5px;
+}
+.gallery-pic{
+    margin: 1px;
+    padding: 1px;
+    border: 1px solid #f6831a;
+    width: fit-content;
+    float: left;
+    border-radius: 5px;
+}
 /* Theme Styler :: End */
