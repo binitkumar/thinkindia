@@ -86,3 +86,6 @@ gem 'mailjet'
 gem "jquery-fileupload-rails"
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'will_paginate', '~> 3.1.0'
+gem 'capistrano-passenger'
+
+gem 'bugsnag'
