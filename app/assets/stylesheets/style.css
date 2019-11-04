@@ -2741,6 +2741,7 @@ article img.pull-right, article .align-right {
   background: #ec5e3f;
   color: white;
   font-weight: bold;
+  z-index: 10;
 }
 img.forum-logo {
     width: 300px;

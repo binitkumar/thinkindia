@@ -2,6 +2,8 @@ class GalleryPicsController < ApplicationController
   before_action :set_gallery_pic, only: [:show, :edit, :update, :destroy, :add_tag, :remove_tag]
   before_action :authenticate_user!, except: [:index]
 
+  load_and_authorize_resource only: [:show]
+
   # GET /gallery_pics
   # GET /gallery_pics.json
   def index
@@ -12,6 +14,7 @@ class GalleryPicsController < ApplicationController
   # GET /gallery_pics/1
   # GET /gallery_pics/1.json
   def show
+    authorize! :read, @gallery_pic
     @gallery_pic_comment = GalleryPicComment.new
   end
 

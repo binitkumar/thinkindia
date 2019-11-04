@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :accept, :reject]
   before_action :authenticate_user!, except: [:index, :show]
 
+  load_and_authorize_resource only: [:edit]
+
   # GET /posts
   # GET /posts.json
   def index
@@ -22,6 +24,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    authorize! :edit, @post
   end
 
   # POST /posts

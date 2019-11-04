@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
 
   skip_before_action :verify_authenticity_token, if: :api_request?
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = exception.message
+    redirect_to main_app.root_url
+  end
+
   def api_request?
     request.fullpath.include?("/api/")
   end
