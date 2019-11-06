@@ -6,7 +6,7 @@ class PressReleasesController < ApplicationController
   # GET /press_releases
   # GET /press_releases.json
   def index
-    @press_releases = PressRelease.all
+    @press_releases = PressRelease.all.order("created_at desc")
   end
 
   # GET /press_releases/1

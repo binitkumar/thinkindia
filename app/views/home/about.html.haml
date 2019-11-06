@@ -1,28 +1,14 @@
 %section#content
   .container
     .row
-      .col-md-6
-        %h2
-          Welcome to
-          %strong Think India NIT Roureka
+      %h2.text-center
+        Welcome to
+        %strong Think India NITR
+      .col-md-6.col-md-push-6
+        %iframe{ src: "https://www.youtube.com/embed/VauGlDb03g0", style: "width: 100%;height: 400px;" }
+      .col-md-6.col-md-pull-6
         %p
           To bring awareness among students about socio-economic conditions in India, Think India NIT Rourkela is a student's club focused on building nation first attitute. We are a network of students engaged in knowledge synthesis and personality building. For this purpose, we network with the corporate sector and academia. We believe being students of institutions like NIT Rourkela where the government spends so much on us, it is our greater responsibility to contribute towards the development of the nation. We at Think India NIT Rourkela, work towards developing knowledge and awareness about India among young students. We organise talks, debates, workshops and other events to channel knowledge to masses. We support students by availing training and internship through our network in the corporate sector and academia.
-      .col-md-6
-        / start flexslider
-        .flexslider
-          %ul.slides
-            %li{"data-thumb-alt" => "", :style => "width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"}
-              %img{:alt => "", :draggable => "false", :src => asset_path("works/full/think-india-about.png"), class: 'about-slider'}/
-            /%li{"data-thumb-alt" => "", :style => "width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"}
-            /  %img{:alt => "", :draggable => "false", :src => asset_path("works/full/nit-about.png"), class: 'about-slider' }/
-            /%li.flex-active-slide{"data-thumb-alt" => "", :style => "width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;"}
-            /  %img{:alt => "", :draggable => "false", :src => asset_path("works/full/sac-about.png"), class: 'about-slider'}/
-          %ul.flex-direction-nav
-            %li.flex-nav-prev
-              %a.flex-prev{:href => "#"} Previous
-            %li.flex-nav-next
-              %a.flex-next{:href => "#"} Next
-        / end flexslider
     / divider
     .row
       .col-md-12
