@@ -6,12 +6,15 @@ class PressReleasesController < ApplicationController
   # GET /press_releases
   # GET /press_releases.json
   def index
+    @title = "News and Events - Think India NITR club"
     @press_releases = PressRelease.all.order("created_at desc")
   end
 
   # GET /press_releases/1
   # GET /press_releases/1.json
   def show
+    @title = "#{@press_release.title} - Think India NITR club"
+    @description = ActionController::Base.helpers.strip_tags(@press_release.article)[0..200] 
   end
 
   # GET /press_releases/new

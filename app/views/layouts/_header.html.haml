@@ -1,9 +1,10 @@
 %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
 %meta{:charset => "utf-8"}/
-%title Think India NIT Rourkela- A Cultural Club at NIT Rourkela
+%title= @title
+%meta{:content => @description, :name => "description"}/
+%meta{name: 'robots', content: 'index, follow'}/
+
 %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-%meta{:content => "", :name => "A clutural club of NIT Rurkela students"}/
-%meta{:content => "", :name => "Think India NIT Rourkela"}/
 = favicon_link_tag asset_path("favicon.ico")
 = csrf_meta_tags
 = csp_meta_tag

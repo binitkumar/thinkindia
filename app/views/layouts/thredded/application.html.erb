@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Think India NITR Forum</title>
+    <title><%= "Forum - #{@title}" %></title>
+    <meta content="<%= @description %>" name='description' />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <%= stylesheet_link_tag 'thredded', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'custom-threaded', 'data-turbolinks-track': 'reload' %>

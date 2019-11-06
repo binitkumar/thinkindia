@@ -1,11 +1,17 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_meta_data
 
   skip_before_action :verify_authenticity_token, if: :api_request?
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = exception.message
     redirect_to main_app.root_url
+  end
+
+  def set_meta_data
+    @title = "Think India NITR - A clutural club at NIT Rourkela"
+    @description = "Connection and co-ordination platform for people having nation first attitute. Engage to discuss issues of national development"
   end
 
   def api_request?

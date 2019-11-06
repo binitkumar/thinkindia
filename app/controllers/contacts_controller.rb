@@ -14,6 +14,7 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
+    @title = "Contact Us - Think India NITR club"
     @contact = Contact.new
   end
 

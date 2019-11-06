@@ -14,6 +14,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @title = "#{@post.title} - Think India NITR club"
+    @description = ActionController::Base.helpers.strip_tags(@post.content)[0..200] 
     @comment = Comment.new(post_id: @post.id)
   end
 
