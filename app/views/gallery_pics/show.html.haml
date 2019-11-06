@@ -6,7 +6,7 @@
         .pull-right= social_share_button_tag("#{@gallery_pic.user.name} shared a photo")
       = image_tag(@gallery_pic.photo.url, width: '100%')
       %p
-        = link_to "Back to gallery", gallery_pics_path(collection: session[:collection])
+        = link_to "Back to gallery", gallery_pics_path(collection: params[:collection])
     .col-md-4
       %b Tags:
       %br/
