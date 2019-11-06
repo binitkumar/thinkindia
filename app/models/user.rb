@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :validatable
+  devise :invitable, :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :validatable, :invitable
 
   extend FriendlyId
   friendly_id :name, use: :slugged
@@ -13,6 +13,7 @@ class User < ApplicationRecord
   validates_acceptance_of :terms
   attr_accessor :terms
 
+  has_many :invitations, class_name: 'User', as: :invited_by
   has_many :posts
   has_many :comments
   has_many :gallery_pics

@@ -2301,9 +2301,6 @@ article img.pull-right, article .align-right {
     margin-right: 0;
     margin-left: 0;
   }
-  nav ul li {
-    display: none;
-  }
   select.selectmenu {
     display: block;
     width: 100%;

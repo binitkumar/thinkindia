@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @unpublished_posts = Post.where(accepted: false).where(rejected: false) if current_user && current_user.admin
-    @posts = Post.where(accepted: true)
+    @posts = Post.where(accepted: true).order("created_at desc")
   end
 
   # GET /posts/1

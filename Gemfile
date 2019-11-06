@@ -68,6 +68,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "haml-rails", "~> 2.0"
 gem "devise"
+gem 'devise_invitable', '~> 2.0.0'
 gem 'thredded', '~> 0.16.13'
 gem 'simple_form'
 gem 'jquery-rails'

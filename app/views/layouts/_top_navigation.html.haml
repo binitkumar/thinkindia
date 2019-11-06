@@ -4,7 +4,7 @@
   %li
     %a{:href => news_and_events_path} News & Events
   %li.dropdown
-    %a.dropdown-toggle{"data-toggle" => "dropdown", "href" => "#"} 
+    %a.dropdown-toggle{"data-target" => "dropdown", "href" => "#",  "aria-haspopup"=>"true", "aria-expanded"=>"false", "role" => "button"} 
       Gallery
       %span.caret
     %ul.dropdown-menu

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :user_invitations
   resources :gallery_pic_comments, only: [:create, :destroy]
   resources :gallery_pics do
     member do
