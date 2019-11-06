@@ -91,3 +91,5 @@ gem 'capistrano-passenger'
 gem 'cancancan'
 
 gem 'bugsnag'
+gem 'sitemap_generator'
+gem 'whenever'
