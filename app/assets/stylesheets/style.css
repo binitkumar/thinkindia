@@ -2772,4 +2772,10 @@ img.forum-logo {
     float: left;
     border-radius: 5px;
 }
+.big-cta h5{
+  color: white;
+}
+.google-submit {
+    padding: 0px;
+}
 /* Theme Styler :: End */

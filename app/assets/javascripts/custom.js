@@ -3,7 +3,9 @@ jQuery(document).ready(function($) {
   "use strict";
 
   (function() {
-    setTimeout(function(){ $(".flash-message").hide(); }, 5000)
+    setTimeout(function(){ $(".flash-message").hide(); }, 5000);
+
+    jQuery(".best_in_place").best_in_place();
 
     var $menu = $('.navigation nav'),
       optionsList = '<option value="" selected>Go to..</option>';

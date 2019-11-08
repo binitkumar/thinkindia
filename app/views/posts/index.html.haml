@@ -9,7 +9,7 @@
         %h3= link_to post.title, post
         = strip_tags(post.content)[0..100]
         %br/
-        Posted by #{post.user.thredded_user_name}
+        Posted by #{link_to post.user.name, "/users/" + post.user.slug}
     %b= "No blog in moderation right now." if @unpublished_posts.empty?
     .solidline
   - @posts.each do |post|
@@ -20,7 +20,7 @@
       - if strip_tags(post.content).length > 100
         %small= link_to "more..", post
       %br/
-      Posted by: #{post.user.thredded_user_name}
+      Posted by: #{link_to post.user.name, "/users/" + post.user.slug}
     %p
       .solidline
   %b= "No blog published yet." if @posts.empty?

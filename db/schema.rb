@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_053838) do
+ActiveRecord::Schema.define(version: 2019_11_07_171130) do
 
   create_table "application_forms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_053838) do
     t.datetime "photo_updated_at"
     t.boolean "published", default: false
     t.boolean "private", default: false
+    t.string "title", default: "Click to add title to this pic.."
   end
 
   create_table "openings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -410,6 +411,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_053838) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
+    t.string "google_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true

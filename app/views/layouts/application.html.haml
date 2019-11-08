@@ -10,7 +10,7 @@
       .flash-message
         - flash.each do |key, value|
           .text-center
-            .col-md-12{ class: "message #{ key }-primary #{key}" } 
+            .col-md-12{ class: "message #{ key }-primary #{key}" }
               = value 
       = yield
       = render "layouts/footer"

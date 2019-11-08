@@ -1,5 +1,5 @@
 .container.mini-frame
-  .col-md-offset-2.col-md-8
+  .col-md-6
     %h3.text-center Register with Think India NIT Rourkela 
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
@@ -39,3 +39,9 @@
       .actions
         = f.submit "Sign up", class: 'btn btn-primary'
     = render "devise/shared/links"
+  .col-md-6
+    %br/
+    %br/
+    %br/
+    .col-md-offset-3
+      = google_sign_in_button image_tag(asset_path("google-signin.png"), height: 50), proceed_to: create_login_url, class: 'google-submit'

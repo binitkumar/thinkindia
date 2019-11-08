@@ -15,6 +15,7 @@
 //= require social-share-button
 //= require activestorage
 //= require bootstrap
+//= require best_in_place
 //= require jquery.easing.1.3
 //= require jcarousel/jquery.jcarousel.min
 //= require jquery.fancybox.pack

@@ -64,6 +64,8 @@ Rails.application.routes.draw do
   mount Thredded::Engine => '/forum'
 
   devise_for :users, controllers: { registrations: "registrations" }
+  get 'login/create', to: 'logins#create', as: :create_login
+
   get 'home/index'
   get 'home/subhas'
   get 'home/patel'

@@ -2,12 +2,19 @@
   .container
     .row
       .col-md-4
+        = image_tag(@user.profile_pic.url(:medium), width: 250, height: 250)
+        %br/
+        %br/
         %b Name:
         = @user.name
         %br/
         %b About me:
         = @user.about_me
         %br/
+        %b Pics shared
+        %br/
+        - @user.gallery_pics.where(published: true).each do |pic|
+          = link_to image_tag(pic.photo.url(:thumb)), gallery_pic_url(pic, collection: pic.pic_collection)
       .col-md-8
         %h3 Blogs by #{@user.name}
         - if @user.posts.any?
