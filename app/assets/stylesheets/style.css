@@ -2778,4 +2778,8 @@ img.forum-logo {
 .google-submit {
     padding: 0px;
 }
+.gallery_pic_title {
+    font-weight: bolder;
+    font-size: larger;
+}
 /* Theme Styler :: End */

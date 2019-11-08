@@ -5,10 +5,9 @@
       %p
         .pull-right= social_share_button_tag("#{@gallery_pic.user.name} shared a photo")
         - if (current_user == @gallery_pic.user) || current_user.admin
-          %hr/
-          = best_in_place @gallery_pic, :title, tabindex: "1"
+          = best_in_place @gallery_pic, :title, tabindex: "1", class: 'gallery_pic_title'
         - elsif @gallery_pic.title != 'Click to add title to this pic..'
-          %b= @gallery_pic.title
+          .gallery_pic_title= @gallery_pic.title
       = image_tag(@gallery_pic.photo.url, width: '100%')
       %p
         = link_to "Back to gallery", gallery_pics_path(collection: params[:collection])
