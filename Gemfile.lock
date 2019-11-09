@@ -124,6 +124,7 @@ GEM
       nokogiri (~> 1.8)
     chronic (0.10.2)
     climate_control (0.2.0)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -146,6 +147,8 @@ GEM
       devise (>= 4.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    erb2haml (0.1.5)
+      html2haml
     erubi (1.9.0)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -281,6 +284,9 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     pg (1.1.4)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     public_suffix (4.0.1)
     puma (3.12.1)
     pundit (2.1.0)
@@ -467,6 +473,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise_invitable (~> 2.0.0)
+  erb2haml
   friendly_id
   google_sign_in
   haml-rails (~> 2.0)
@@ -479,6 +486,7 @@ DEPENDENCIES
   omniauth
   paperclip
   pg
+  pry
   puma (~> 3.11)
   rack-cors
   rails (~> 5.2.3)

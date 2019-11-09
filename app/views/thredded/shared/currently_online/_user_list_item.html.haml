@@ -1,0 +1,4 @@
+%li.thredded--currently-online--user
+  %a.thredded--link{:href => "#{user_path(user)}"}
+    %img.thredded--currently-online--avatar{:alt => "#{user.name}", :src => "#{user.profile_pic.url(:thumb)}"}/
+    = user.thredded_display_name

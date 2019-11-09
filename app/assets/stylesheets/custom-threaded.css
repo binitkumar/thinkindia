@@ -3,7 +3,8 @@
 }
 img.forum-logo {
     width: 300px;
-    margin: 0px auto;
+    float: left;
+    margin-left: 15px;
     display: block;
 }
 .forum-title {

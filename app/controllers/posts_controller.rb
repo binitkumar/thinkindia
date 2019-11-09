@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    @title = "Blogs - Think India NITR"
     @unpublished_posts = Post.where(accepted: false).where(rejected: false) if current_user && current_user.admin
     @posts = Post.where(accepted: true).order("created_at desc")
   end

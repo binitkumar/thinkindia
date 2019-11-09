@@ -1,4 +1,5 @@
 .container.mini-frame
+  .pull-right= social_share_button_tag(@press_release.title)
   %h3.text-center Press Release
   .pull-right
     %b= "Published on: #{@press_release.published_on.strftime("%d/%m/%Y")}"
