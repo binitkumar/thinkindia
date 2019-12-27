@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_07_171130) do
+ActiveRecord::Schema.define(version: 2019_12_27_091742) do
 
   create_table "application_forms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -82,6 +82,18 @@ ActiveRecord::Schema.define(version: 2019_11_07_171130) do
     t.boolean "published", default: false
     t.boolean "private", default: false
     t.string "title", default: "Click to add title to this pic.."
+  end
+
+  create_table "ideas2020s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email"
+    t.string "name"
+    t.text "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "idea_file_name"
+    t.string "idea_content_type"
+    t.bigint "idea_file_size"
+    t.datetime "idea_updated_at"
   end
 
   create_table "openings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -392,7 +404,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_171130) do
     t.datetime "updated_at", null: false
     t.boolean "is_admin", default: false
     t.string "name"
-    t.boolean "is_active", default: false
+    t.boolean "is_active", default: true
     t.string "slug"
     t.text "about_me"
     t.boolean "allow_promotional_messages", default: true

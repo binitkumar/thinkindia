@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :ideas2020s
   resources :user_invitations
   resources :gallery_pic_comments, only: [:create, :destroy]
   resources :gallery_pics do
@@ -73,6 +74,7 @@ Rails.application.routes.draw do
   get 'privacy_policy', to: "home#privacy_policy", as: :privacy_policy
   get 'terms_and_conditions', to: "home#terms_and_conditions", as: :terms_and_conditions
   get 'about', to: "home#about", as: :about
+  get 'ideas-2020', to: "home#ideas2020", as: :ideas_2020
 
   get "users/:id", to: "home#user_details"
   root to: "home#index"

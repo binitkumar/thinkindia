@@ -1,0 +1,18 @@
+.container
+  %h3 Your idea has been submited. You will be provided discussion link shortly.
+  %b Here are details of your submission
+  
+  %p
+    %b Entry ID:
+    = 1252 + @ideas2020.id
+  %p
+    %b Email:
+    = @ideas2020.email
+  %p
+    %b Name:
+    = @ideas2020.name
+  %p
+    %b Title:
+    = @ideas2020.title
+
+  = link_to 'Back', root_path

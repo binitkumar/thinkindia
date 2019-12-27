@@ -1,0 +1,14 @@
+-# frozen_string_literal: true
+= simple_form_for(@ideas2020) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :email
+    = f.input :name
+    = f.input :title, label: 'Title of Idea'
+    = f.input :idea, label: 'Idea file', hint: 'Only pdf/doc/docx files are accepted'
+    = recaptcha_tags 
+
+  .form-actions
+    = f.button :submit, "Submit", class: 'btn btn-success'
