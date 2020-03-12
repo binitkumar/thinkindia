@@ -11,6 +11,25 @@
         %b About me:
         = @user.about_me
         %br/
+        %b Hometown:
+        = @user.hometown
+        %br/
+        %b Interest Area:
+        = @user.interest_area
+        %br/
+        %b Hobbies:
+        = @user.hobbies
+        %br/
+        %b Aim and Future plan:
+        = @user.aim_and_future_plan
+        %br/
+        %b Batch and year:
+        = @user.batch_and_year
+        %br/
+        %b Roll No:
+        = @user.roll_no
+        %br/
+ 
         %b Pics shared
         %br/
         - @user.gallery_pics.where(published: true).each do |pic|

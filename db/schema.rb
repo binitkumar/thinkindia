@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_27_091742) do
+ActiveRecord::Schema.define(version: 2020_03_12_174157) do
 
   create_table "application_forms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -424,6 +424,13 @@ ActiveRecord::Schema.define(version: 2019_12_27_091742) do
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.string "google_id"
+    t.string "roll_no"
+    t.string "batch_and_year"
+    t.text "aim_and_future_plan"
+    t.text "other_details"
+    t.string "hobbies"
+    t.text "interest_area"
+    t.string "hometown"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true

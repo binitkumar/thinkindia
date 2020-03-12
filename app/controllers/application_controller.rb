@@ -30,6 +30,8 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :terms, :about_me, :allow_promotional_messages])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :about_me, :profile_pic])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :about_me, :profile_pic, :roll_no, :batch_and_year, :aim_and_future_plan,
+      :hometown, :interest_area, :hobbies
+    ])
   end
 end
