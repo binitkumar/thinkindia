@@ -1,5 +1,7 @@
-# config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default v# config valid for current version and patch releases of Capistrano
+lock "~> 3.12.1"
 
 set :application, "ThinkIndiaNITR"
 set :repo_url, "git@github.com:binitkumar/thinkindia.git"
@@ -25,7 +27,9 @@ set :rbenv_roles, :all # default value
 # set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
 
 # Default value for :pty is false
-# set :pty, true
+set :pty, false
+SSHKit.config.command_map[:sidekiq] = "source ~/.bash_profile && bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "source ~/.bash_profile && bundle exec sidekiqctl"
 
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml"
