@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_12_174157) do
+ActiveRecord::Schema.define(version: 2020_05_10_145110) do
 
   create_table "application_forms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,23 @@ ActiveRecord::Schema.define(version: 2020_03_12_174157) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "opening_id"
+  end
+
+  create_table "call_your_friends", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "your_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "called_friends", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "contact_no"
+    t.bigint "whatsapp_no"
+    t.string "institution"
+    t.string "department"
+    t.integer "call_your_friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

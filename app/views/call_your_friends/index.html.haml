@@ -1,0 +1,21 @@
+%h1 Listing call_your_friends
+
+%table
+  %thead
+    %tr
+      %th Your name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @call_your_friends.each do |call_your_friend|
+      %tr
+        %td= call_your_friend.your_name
+        %td= link_to 'Show', call_your_friend
+        %td= link_to 'Edit', edit_call_your_friend_path(call_your_friend)
+        %td= link_to 'Destroy', call_your_friend, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Call your friend', new_call_your_friend_path

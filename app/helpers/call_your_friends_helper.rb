@@ -1,0 +1,2 @@
+module CallYourFriendsHelper
+end

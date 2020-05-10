@@ -17,6 +17,7 @@
 //= require bootstrap
 //= require best_in_place
 //= require jquery.easing.1.3
+//= require jquery_nested_form
 //= require jcarousel/jquery.jcarousel.min
 //= require jquery.fancybox.pack
 //= require google-code-prettify/prettify

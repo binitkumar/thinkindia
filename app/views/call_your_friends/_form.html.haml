@@ -1,0 +1,36 @@
+-# frozen_string_literal: true
+= simple_nested_form_for(@call_your_friend) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :your_name
+  .row
+    = f.fields_for :called_friends do |called_friend|
+      .friends-block
+        .row
+          .col-md-6
+            .form-inputs
+              = called_friend.input :name
+          .col-md-6
+            .form-inputs
+              = called_friend.input :contact_no
+        .row
+          .col-md-6
+            .form-inputs
+              = called_friend.input :whatsapp_no
+          .col-md-6
+            .form-inputs
+              = called_friend.input :institution
+        .row
+          .col-md-6
+            .form-inputs
+              = called_friend.input :department
+        %hr/
+  .row
+    .form-inputs
+      = f.link_to_add "Add a called friend", :called_friends, class: 'btn btn-success pull-right'
+  .row
+    = recaptcha_tags
+  .form-actions
+    = f.button :submit, "Save", class: 'btn btn-primary'

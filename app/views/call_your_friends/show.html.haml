@@ -1,0 +1,29 @@
+.container
+  %p
+    %b Your name:
+    = @call_your_friend.your_name
+  %p
+    - @call_your_friend.called_friends.each do |friend|
+      .row
+        .col-md-6
+          %b Name:
+          #{friend.name}
+        .col-md-6
+          %b Contact No:
+          #{friend.contact_no}
+      .row
+        .col-md-6
+          %b Whatsapp No:
+          #{friend.whatsapp_no}
+        .col-md-6
+          %b Institution:
+          #{friend.institution}
+      .row
+        .col-md-6
+          %b Department:
+          #{friend.department}
+      %hr/
+
+= link_to 'Edit', edit_call_your_friend_path(@call_your_friend)
+\|
+= link_to 'Back', call_your_friends_path

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :call_your_friends
   resources :ideas2020s
   resources :user_invitations
   resources :gallery_pic_comments, only: [:create, :destroy]

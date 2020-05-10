@@ -2783,4 +2783,10 @@ img.forum-logo {
     font-weight: bolder;
     font-size: larger;
 }
+
+.friends-block {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 20px;
+}
 /* Theme Styler :: End */
