@@ -26,6 +26,8 @@
           .col-md-6
             .form-inputs
               = called_friend.input :department
+          .col-md-6
+            = called_friend.link_to_remove "Remove", class: 'btn btn-danger pull-right'
         %hr/
   .row
     .form-inputs
