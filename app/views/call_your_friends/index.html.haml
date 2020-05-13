@@ -1,21 +1,27 @@
-%h1 Listing call_your_friends
+.container
+  %h1 Called friends list
 
-%table
-  %thead
-    %tr
-      %th Your name
-      %th
-      %th
-      %th
-
-  %tbody
-    - @call_your_friends.each do |call_your_friend|
+  %table.table.table-bordered
+    %thead
       %tr
-        %td= call_your_friend.your_name
-        %td= link_to 'Show', call_your_friend
-        %td= link_to 'Edit', edit_call_your_friend_path(call_your_friend)
-        %td= link_to 'Destroy', call_your_friend, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Name
+        %th Friends Name
+        %th Contact No
+        %th Whatsapp No
+        %th Institution
+        %th Department
+    
+    %tbody
+      - @call_your_friends.each do |call_your_friend|
+        - call_your_friend.called_friends.each do |friend|
+          %tr
+            %td= call_your_friend.your_name
+            %td= friend.name
+            %td= friend.contact_no
+            %td= friend.whatsapp_no
+            %td= friend.institution
+            %td= friend.department
 
-%br
+  %br
 
-= link_to 'New Call your friend', new_call_your_friend_path
+  = link_to 'New Call your friend', new_call_your_friend_path
