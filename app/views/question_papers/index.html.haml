@@ -1,0 +1,15 @@
+.container
+  %h1 Mock Papers
+
+  - if current_user.admin
+    .row
+      .pull-right= link_to 'New Question paper', new_question_paper_path, class: 'btn btn-primary'
+  .row
+    - @question_papers.each do |question_paper|
+      .question-paper-section 
+        - if current_user.admin
+          .pull-right= link_to 'Delete', question_paper, method: :delete, data: { confirm: 'Are you sure?' }
+          .pull-right= link_to 'Edit', edit_question_paper_path(question_paper)
+          .pull-right= link_to 'Show', question_paper
+        %p= link_to question_paper.title, question_paper
+

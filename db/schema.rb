@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_145110) do
+ActiveRecord::Schema.define(version: 2020_05_20_005225) do
 
   create_table "application_forms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -122,6 +122,15 @@ ActiveRecord::Schema.define(version: 2020_05_10_145110) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "paper_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "question_paper_id"
+    t.integer "correct_answer"
+    t.integer "wrong_answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.text "title"
@@ -144,6 +153,29 @@ ActiveRecord::Schema.define(version: 2020_05_10_145110) do
     t.date "published_on"
     t.string "slug"
     t.index ["slug"], name: "index_press_releases_on_slug", unique: true
+  end
+
+  create_table "question_papers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "question_file_file_name"
+    t.string "question_file_content_type"
+    t.bigint "question_file_file_size"
+    t.datetime "question_file_updated_at"
+  end
+
+  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "query"
+    t.string "option_1"
+    t.string "option_2"
+    t.string "option_3"
+    t.string "option_4"
+    t.integer "correct_option"
+    t.integer "question_paper_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "index"
   end
 
   create_table "taggings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -401,6 +433,14 @@ ActiveRecord::Schema.define(version: 2020_05_10_145110) do
     t.index ["messageboard_id"], name: "index_thredded_user_topic_read_states_on_messageboard_id"
     t.index ["user_id", "messageboard_id"], name: "thredded_user_topic_read_states_user_messageboard"
     t.index ["user_id", "postable_id"], name: "thredded_user_topic_read_states_user_postable", unique: true
+  end
+
+  create_table "user_answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "question_id"
+    t.integer "selected_option"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_updates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

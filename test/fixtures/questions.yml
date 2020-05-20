@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  query: MyText
+  option_1: MyString
+  option_2: MyString
+  option_3: MyString
+  option_4: MyString
+  correct_option: 1
+  question_paper_id: 1
+
+two:
+  query: MyText
+  option_1: MyString
+  option_2: MyString
+  option_3: MyString
+  option_4: MyString
+  correct_option: 1
+  question_paper_id: 1

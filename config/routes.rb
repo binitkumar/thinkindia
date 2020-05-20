@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :question_papers do
+    member do
+      patch :submit_answers
+    end
+  end
+
   resources :call_your_friends
   resources :ideas2020s
   resources :user_invitations

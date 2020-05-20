@@ -1,0 +1,2 @@
+class PaperResult < ApplicationRecord
+end

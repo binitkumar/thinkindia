@@ -18,6 +18,8 @@ class User < ApplicationRecord
   has_many :comments
   has_many :gallery_pics
   has_many :gallery_pic_comments
+  has_many :user_answers
+  has_many :paper_results
 
   def activation_status
     if self.is_active

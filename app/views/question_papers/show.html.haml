@@ -1,0 +1,59 @@
+.container
+  %br/
+  %p.text-center
+    %b= @question_paper.title
+  %br/
+  - if @result
+    %p
+      %h3.text-center Result
+    %hr/
+    %p.text-center
+      %b Total Questions:
+      = @question_paper.questions.count
+    %p.text-center
+      %b Correct:
+      = @result.correct_answer
+    %p.text-center
+      %b Wrong:
+      = @result.wrong_answer
+    %p
+      - @question_paper.questions.each_with_index do |ques, index|
+        .row.question_section
+          .col-md-12 #{index + 1}. #{ques.query}
+          .col-md-12
+            %b Options:
+          .col-md-3
+            1.
+            =ques.option_1
+          .col-md-3
+            2.
+            =ques.option_2
+          .col-md-3
+            3.
+            =ques.option_3
+          .col-md-3
+            4.
+            =ques.option_4
+          .col-md-6
+            %b Correct option:
+            = ques.correct_option
+          .col-md-6
+            %b Your option:
+            = ques.selected_option(current_user)
+  - else
+    %p
+      = form_for @question_paper, url: submit_answers_question_paper_path(@question_paper) do |f|
+        - @question_paper.questions.each_with_index do |ques, index|
+          .row.question_section
+            .col-md-12 
+              %b #{index + 1}. #{simple_format ques.query}
+            .col-md-3
+              %input{ type: "radio", name: "answer-#{current_user.id}-#{ques.id}", value: "1"}=ques.option_1
+            .col-md-3
+              %input{ type: "radio", name: "answer-#{current_user.id}-#{ques.id}", value: "2"}=ques.option_2
+            .col-md-3
+              %input{ type: "radio", name: "answer-#{current_user.id}-#{ques.id}", value: "3"}=ques.option_3
+            .col-md-3
+              %input{ type: "radio", name: "answer-#{current_user.id}-#{ques.id}", value: "4"}=ques.option_4
+        .text-center= f.submit "Submit", class: 'btn btn-primary'
+        %br/

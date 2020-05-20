@@ -2789,4 +2789,19 @@ img.forum-logo {
   border-radius: 10px;
   padding: 20px;
 }
+
+.question_section {
+    background: #e8dfdf;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid #aac0e0;
+}
+.question-paper-section {
+    background: #f9f9f9;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px;
+    border: 1px solid #aac0e0;
+}
 /* Theme Styler :: End */
