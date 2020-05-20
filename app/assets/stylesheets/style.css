@@ -2804,4 +2804,9 @@ img.forum-logo {
     border-radius: 10px;
     border: 1px solid #aac0e0;
 }
+.center-block {
+    margin: 0px auto;
+    width: fit-content;
+    text-align: center;
+}
 /* Theme Styler :: End */
