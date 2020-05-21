@@ -5,16 +5,12 @@
     .nivo-slider
       / Slide #1 image
       %img{:alt => "", :src => asset_path("slides/nivo/bg-1.jpg"), :title => "#caption-1"}/
-      / Slide #2 image
-      %img{:alt => "", :src => asset_path("slides/nivo/bg-2.jpg"), :title => "#caption-2"}/
-      / Slide #3 image
-      %img{:alt => "", :src => asset_path("slides/nivo/bg-3.jpg"), :title => "#caption-3"}/
     .container
       .row
         .col-md-12
           / Slide #1 caption
           #caption-1.nivo-caption
-            %div
+            %div.nivo-caption-content
               %h2
                 %small Our Inspiration
                 %br/ 
@@ -22,42 +18,14 @@
               %p
                 तुम मुझे खून दो, मैं तुम्हें आज़ादी दूंगा
               %a.btn.btn-theme{:href => "/home/subhas"} Read More
-          / Slide #2 caption
-          #caption-2.nivo-caption
-            %div
-              %h2
-                %small Our Inspiration
-                %br/ 
-                %strong Sardar Patel
-              %p
-                Prime responsibility of every citizen to feel that his country is free and to defend it's freedom is his duty.
-
-              %a.btn.btn-theme{:href => "/home/patel"} Read More
-          / Slide #3 caption
-          #caption-3.nivo-caption
-            %div
-              %h2
-                %small Our Inspiration
-                %br/ 
-                %strong Shri Aurobindo
-              %p
-                By our stumbling the world is perfected.
-              %a.btn.btn-theme{:href => "/home/aurobindo"} Read More
   / end slider
-%section.callaction#services
+%section#content.saffron-top-border
   .container
     .row
       .col-md-12
-        .big-cta
-          .cta-text
-            %h3.text-center
-              We are Think India and
-              %col-md-.highlight
-                %strong We think for INDIA!
-%section#content
-  .container
-    .row
-      .col-md-12
+        .row
+          .col-md-12
+            %h3.text-center Our activities
         .row
           .col-md-3
             .box.aligncenter

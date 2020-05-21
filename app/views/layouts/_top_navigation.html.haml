@@ -39,4 +39,14 @@
         %li= link_to "Gallery Pics", admin_gallery_pics_path
         %li= link_to "Applications", application_forms_path
         %li= link_to "Contacts", contacts_path
+  - unless current_user
+    %li
+      %a{href: new_registration_path(:user)}
+        %i.icon-user
+        Register 
+    %li
+      %a{href: new_session_path(:user)} Sign in
+  - else
+    %li= link_to "Profile", edit_registration_path(:user)
+    %li= link_to "Sign out", destroy_session_path(:user), method: :delete
   

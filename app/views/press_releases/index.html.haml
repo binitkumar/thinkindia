@@ -5,7 +5,7 @@
     %br/
     %br/
   - @press_releases.each do |press_release|
-    %p
+    .press-release
       .pull-right 
         %b Published on #{press_release.published_on.strftime("%d/%m/%Y")}
       %b
@@ -15,4 +15,3 @@
       - if current_user && current_user.admin
         .pull-right= link_to 'Edit', edit_press_release_path(press_release), class: 'btn btn-primary'
         .pull-right= link_to 'Destroy', press_release, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary'
-    .solidline

@@ -1,20 +1,6 @@
 %header
   .container
-    .row.nomargin
-      .col-md-12
-        .headnav
-          %ul
-            - unless current_user
-              %li
-                %a{href: new_registration_path(:user)}
-                  %i.icon-user
-                  Register 
-              %li
-                %a{href: new_session_path(:user)} Sign in
-            - else
-              %li= link_to "Profile", edit_registration_path(:user)
-              %li= link_to "Sign out", destroy_session_path(:user), method: :delete
-    %nav.navbar.navbar-default
+    %nav.navbar.navbar-static-top
       .container-fluid
         .navbar-header
           %button.navbar-toggler{"type"=>"button", "class"=>"navbar-toggle collapsed", "data-toggle"=>"collapse", "data-target"=>".navbar-collapse", "aria-controls"=>"navbarSupportedContent", "aria-expanded"=>false}

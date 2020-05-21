@@ -34,9 +34,13 @@
 /* ===================================
 1. General
 ==================================== */
+@font-face {
+   font-family: 'BioRhyme';
+   src: url('/font/bioRhyme/BioRhyme-Regular.ttf')
+}
 
 body {
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'BioRhyme', Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.6em;
@@ -233,10 +237,9 @@ header {
 }
 
 header .logo {
-  margin: -10px 0 0 0;
   float: left;
-  width: 300px;
-  height: 80px;
+  width: 150px;
+  height: 40px;
 }
 
 header .logo img {
@@ -465,12 +468,23 @@ select.selectmenu {
   margin: 0;
 }
 
-.nivo-slider img {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  max-width: none;
-  height: 400px !important;
+@media only screen and (min-width: 600px) {
+  .nivo-slider img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    max-width: none;
+    height: 600px !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .nivo-slider img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    max-width: none;
+    height: 300px !important;
+  }
 }
 
 .nivo-main-image {
@@ -523,13 +537,13 @@ select.selectmenu {
 .nivo-caption {
   position: absolute;
   left: 80px;
-  bottom: 20px;
-  background: #000;
+  bottom: 15%;
+  background: rgb(0, 0, 0, 0.4);;
   color: #fff;
-  width: 30%;
+  width: 50%;
+  height: 70%;
   z-index: 8;
   padding: 20px;
-  opacity: 0.8;
   overflow: hidden;
   display: none;
   -moz-opacity: 0.8;
@@ -539,10 +553,11 @@ select.selectmenu {
   -moz-box-sizing: border-box;
   /* Firefox, other Gecko */
   box-sizing: border-box;
+  border-radius: 10px;
   /* Opera/IE 8+ */
 }
 
-.nivo-caption h2 {
+.nivo-caption h2, .nivo-caption h2 small{
   color: #fff;
   font-size: 26px;
   line-height: 1em;
@@ -2713,7 +2728,6 @@ article img.pull-right, article .align-right {
 }
 .navbar-header{
   text-align: center;
-  margin-bottom: 15px;
 }
 .navbar-default{
   background-color: transparent;
@@ -2808,5 +2822,15 @@ img.forum-logo {
     margin: 0px auto;
     width: fit-content;
     text-align: center;
+}
+.saffron-top-border {
+    border-top: 5px solid #f03c02;
+}
+.press-release {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    background: #80808026;
 }
 /* Theme Styler :: End */
