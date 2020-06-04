@@ -448,7 +448,7 @@ select.selectmenu {
 }
 
 .sliding-background {
-  background: url("/assets/main-bg.jpg") repeat-x;
+  background: url(asset_path("main-bg.jpg")) repeat-x;
   height: 560px;
   width: 5076px;
   animation: slide 60s linear infinite;
@@ -476,7 +476,7 @@ select.selectmenu {
     position: absolute;
     bottom: 50px !important;
     background: #000000b8;
-    height: 300px !important;
+    height: 370px !important;
   }
 }
 
