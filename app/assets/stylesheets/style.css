@@ -55,6 +55,9 @@ a:active {
   clear: both;
 }
 
+.navbar-toggle .icon-bar {
+  border-bottom: 1px solid black;
+}
 /* ===================================
 2. layout
 ==================================== */
@@ -240,6 +243,7 @@ header .logo {
   float: left;
   width: 150px;
   height: 40px;
+  margin-top: 10px;
 }
 
 header .logo img {
@@ -290,7 +294,7 @@ header .logo h1 {
 
 header ul.nav li {
   border: none;
-  margin: 0;
+  margin-top: 10px;
 }
 
 header ul.nav li a {
@@ -440,253 +444,52 @@ select.selectmenu {
 /* The Nivo Slider styles */
 
 #nivo-slider {
-  position: relative;
-}
-
-#featured #nivo-slider .row, #featured #nivo-slider .row-fluid {
-  margin-bottom: 0;
-}
-
-.nivo-slider {
-  background: #fbfbfb;
-}
-
-.slides {
-  margin: 0;
   overflow: hidden;
 }
 
-.slides li {
-  list-style-type: none;
+.sliding-background {
+  background: url("/assets/main-bg.jpg") repeat-x;
+  height: 560px;
+  width: 5076px;
+  animation: slide 60s linear infinite;
 }
 
-.nivoSlider, .nivo-slider {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  margin: 0;
+@keyframes slide{
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-1692px, 0, 0);
+  }
 }
 
 @media only screen and (min-width: 600px) {
-  .nivo-slider img {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    max-width: none;
-    height: 600px !important;
+  .sliding-background {
+    height: 550px !important;
   }
 }
 @media only screen and (max-width: 600px) {
-  .nivo-slider img {
+  .sliding-background {
+    height: 400px !important;
+  }
+  .nivo-caption {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    max-width: none;
+    bottom: 50px !important;
+    background: #000000b8;
     height: 300px !important;
   }
 }
 
-.nivo-main-image {
-  display: block !important;
-  position: relative !important;
-  width: 100% !important;
-}
-
-/* If an image is wrapped in a link */
-
-.nivoSlider a.nivo-imageLink {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  z-index: 6;
-  display: none;
-  background: white;
-  filter: alpha(opacity=0);
-  opacity: 0;
-}
-
-/* The slices and boxes in the Slider */
-
-.nivo-slice {
-  display: block;
-  position: absolute;
-  z-index: 5;
-  height: 100%;
-  top: 0;
-}
-
-.nivo-box {
-  display: block;
-  position: absolute;
-  z-index: 5;
-  overflow: hidden;
-}
-
-.nivo-box img {
-  display: block;
-}
-
-/* Caption styles */
-
 .nivo-caption {
-  position: absolute;
-  left: 80px;
-  bottom: 15%;
-  background: #00000066;
-  color: #fff;
-  width: 50%;
-  height: 70%;
-  z-index: 8;
-  padding: 20px;
-  overflow: hidden;
-  display: none;
-  -moz-opacity: 0.8;
-  filter: alpha(opacity=8);
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  border-radius: 10px;
-  /* Opera/IE 8+ */
+    position: absolute;
+    bottom: 200px;
+    background: #000000b8;
+    height: 300px;
+    border-radius: 5px;
 }
-
-.nivo-caption h2, .nivo-caption h2 small{
-  color: #fff;
-  font-size: 26px;
-  line-height: 1em;
-}
-
-.nivo-caption p {
-  margin-bottom: 20px;
-}
-
-.nivo-caption a {
-  display: inline !important;
-}
-
-.nivo-html-caption {
-  display: none;
-}
-
-/* Direction nav styles (e.g. Next & Prev) */
-
-.nivo-directionNav a {
-  position: absolute;
-  bottom: 0px;
-  z-index: 9;
-  cursor: pointer;
-}
-
-.nivo-prevNav {
-  right: 0px;
-}
-
-.nivo-nextNav {
-  right: 0px;
-}
-
-/* Control nav styles (e.g. 1,2,3...) */
-
-.nivo-controlNav {
-  text-align: center;
-  padding: 20px 0;
-}
-
-.nivo-controlNav a.active {
-  background-position: 0 -22px;
-}
-
-.nivo-directionNav a {
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  -webkit-font-smoothing: antialiased;
-  /* sprites.less reset */
-  display: inline;
-  width: auto;
-  height: auto;
-  line-height: normal;
-  vertical-align: baseline;
-  background-image: none;
-  background-position: 0% 0%;
-  background-repeat: repeat;
-  margin-top: 0;
-  margin: 0;
-  display: inline-block !important;
-  text-align: center !important;
-  color: #fff;
-  width: 18px;
-  height: 18px;
-  padding: 3px;
-  font-size: 12px;
-  line-height: 18px;
-  text-shadow: none;
-  cursor: pointer;
-  background-color: #444;
-  right: 15px;
-}
-
-.nivo-directionNav a {
-  opacity: 1;
-}
-
-a.nivo-nextNav {
-  right: 0px;
-  padding: 0px;
-}
-
-a.nivo-nextNav:before {
-  content: "\f105";
-  color: #fff;
-}
-
-a.nivo-prevNav {
-  right: 25px;
-  padding: 0px;
-}
-
-a.nivo-prevNav:before {
-  content: "\f104";
-  color: #fff;
-}
-
-.nivo-controlNav.nivo-thumbs-enabled {
-  width: 100%;
-}
-
-.nivo-controlNav.nivo-thumbs-enabled a {
-  width: auto;
-  height: auto;
-  background: none;
-  margin-bottom: 5px;
-}
-
-.nivo-controlNav.nivo-thumbs-enabled img {
-  display: block;
-  width: 120px;
-  height: auto;
-}
-
-.nivo-controlNav a {
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  background: url(../img/nivo-bullets.png) no-repeat;
-  text-indent: -9999px;
-  border: 0;
-  margin: 0 2px;
-}
-
-.nivo-control.active {
-  background-position: 0 0;
+.nivo-caption-content {
+  color: white;
+  padding: 10px;
 }
 
 /* ===================================
@@ -2267,9 +2070,6 @@ article img.pull-right, article .align-right {
     background: none;
     width: 100%;
   }
-  .nivo-caption {
-    width: 50%;
-  }
   /* slitslider */
   .sl-slider h2 {
     font-size: 72px;
@@ -2344,13 +2144,6 @@ article img.pull-right, article .align-right {
   .sl-slider h2 {
     font-size: 60px;
   }
-  /* nivo slider */
-  .nivo-caption {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 10px;
-  }
   #inner-headline .breadcrumb {
     float: left;
     clear: both;
@@ -2418,13 +2211,6 @@ article img.pull-right, article .align-right {
     float: left;
   }
   .flexslider .slide-caption {
-    display: none;
-  }
-  /* nivo slider */
-  .nivo-caption {
-    background: none;
-  }
-  .nivo-caption p {
     display: none;
   }
   .da-slide .da-img .video-container {
@@ -2832,5 +2618,10 @@ img.forum-logo {
     border: 2px solid gray;
     border-radius: 5px;
     background: #80808026;
+}
+.free-papers-section {
+    padding: 5px 0px;
+    background: #aaa7d2;
+    margin-bottom: 0px;
 }
 /* Theme Styler :: End */

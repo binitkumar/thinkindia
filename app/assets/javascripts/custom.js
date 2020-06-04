@@ -143,7 +143,7 @@ jQuery(document).ready(function($) {
   $('.flexslider').flexslider();
 
   //nivo slider
-  $('.nivo-slider').nivoSlider({
+  /* $('.nivo-slider').nivoSlider({
     effect: 'random', // Specify sets like: 'fold,fade,sliceDown'
     slices: 15, // For slice animations
     boxCols: 8, // For box animations
@@ -165,6 +165,7 @@ jQuery(document).ready(function($) {
     lastSlide: function() {}, // Triggers when last slide is shown
     afterLoad: function() {} // Triggers when slider has loaded
   });
+  */
 
   // Da Sliders
   if ($('#da-slider').length) {

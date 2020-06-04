@@ -1,10 +1,13 @@
+.row.free-papers-section
+  .col-md-12
+    .text-center
+      Free placement papers released now! View these papers at
+      = link_to "Free placement papers", question_papers_path
 %section#featured
   / start slider
   / Slider
   #nivo-slider
-    .nivo-slider
-      / Slide #1 image
-      %img{:alt => "", :src => asset_path("slides/nivo/bg-1.jpg"), :title => "#caption-1"}/
+    .sliding-background
     .container
       .row
         .col-md-12
@@ -12,20 +15,42 @@
           #caption-1.nivo-caption
             %div.nivo-caption-content
               %h2
-                %small Our Inspiration
+                Welcome
                 %br/ 
-                %strong Netaji Subhash Chandra Bose
+                %strong Join the community
               %p
-                तुम मुझे खून दो, मैं तुम्हें आज़ादी दूंगा
-              %a.btn.btn-theme{:href => "/home/subhas"} Read More
+                %ul
+                  %li Spread across more then 30 national institutions
+                  %li Saperate segments for each activities
+                  %li Expert support and guidance
+                  %li A continuous evolement process
+              %a.btn.btn-theme{:href => "/users/sign_up"} Join now
   / end slider
-%section#content.saffron-top-border
+  .row
+    .col-md-12.col-sm-12.col-xs-12
+      .col-md-offset-2.col-xs-offset-2.col-md-2.col-sm-2.col-xs-2 Follow us
+      .col-md-2.col-sm-2.col-xs-2
+        %a{ "href"=> "https://www.facebook.com/thinkindianitr", "data-original-title" => "Facebook", "target"=> "_blank"}
+          %i{ "class" => "icon-facebook icon-64" }
+      .col-md-2.col-sm-2.col-xs-2
+        %a{ "href"=> "https://twitter.com/thinkindianitr", "data-original-title" => "Twitter", "target"=> "_blank"}
+          %i{ "class" => "icon-twitter icon-64" }
+      .col-md-2.col-sm-2.col-xs-2
+        %a{ "href"=> "https://www.instagram.com/thinkindia.nitr/", "data-original-title" => "Instagram", "target"=> "_blank"}
+          %i{ "class" => "icon-desktop icon-64" }
+  / divider
+  .row
+    .col-md-12
+      .solidline
+
+%section#content
   .container
     .row
       .col-md-12
         .row
           .col-md-12
-            %h3.text-center Our activities
+            %h3.text-center 
+              %u What We Do
         .row
           .col-md-3
             .box.aligncenter
@@ -71,8 +96,8 @@
     / Portfolio Projects
     .row
       .col-md-12
-        %h4.heading
-          Some of recent
+        %h4.heading.text-center
+          Some of our recent
           %strong works
         .row
           %section#projects
@@ -122,3 +147,10 @@
                 %img{:alt => "21 October 2019, Think India NITR managed talk by Aashish Chauhan", :src => asset_path("works/aashish_chauhan.JPG")}/
               / End Item Project
     / End Portfolio Projects
+
+    / Portfolio Projects
+    .row
+      .col-md-12
+        %h4.heading.text-center
+          %u Get Involved
+        = render "home/join_us"
